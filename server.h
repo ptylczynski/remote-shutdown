@@ -74,12 +74,12 @@ int checkSecret(struct SimpleMessage * simpleMessage){
 // mock stopping of computer
 void stop(){
     // system("shutdown -P now");
-    printf("Shutting down");
+    write(1,"Shutting down", 12);
 }
 
 // mock hibernation of system
 void suspend(){
-    printf("Suspending");
+    write(1,"Suspending", 9);
 }
 
 // sends Simple message with action key response and given message

@@ -48,6 +48,11 @@ char * SM_Serialize(struct SimpleMessage * message, int size){
 
 // inflate string into simple message
 struct SimpleMessage SM_Deserialize(char * string){
+    if(strstr(string, MESSAGE_HEADER) == NULL || strstr(string, MESSAGE_FOOTER) == NULL){
+        struct SimpleMessage empty = {};
+        return empty;
+    }
+
     // remove header and footer
     string = substring(string, 0, strlen(string) - strlen(MESSAGE_FOOTER));
     string = substring(string, strlen(MESSAGE_HEADER) - 1, strlen(string));
@@ -93,11 +98,12 @@ char * findValue(struct SimpleMessage * simpleMessage, char * key, int size){
     int found = 0;
     // tracks pos of key
     int idx = 0;
-    while(found == 0){
+    while(found == 0 && idx < 20){
         if(strcmp(simpleMessage->keys[idx], key) == 0) found = 1;
         else idx++;
     }
-    return simpleMessage->values[idx];
+    if(idx == 20) return "dasjtygauhdas,kihjdfksik";
+    else return simpleMessage->values[idx];
 }
 
 // get number of messages in SM
