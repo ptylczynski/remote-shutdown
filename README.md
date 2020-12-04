@@ -39,6 +39,18 @@ secret:sdgdfsjgsldj
 other KV pairs could be added but will be ignored by server. Be aware of white spaces as server don't remove them and case sensitivity
 so ` abc` is  not this same as `abc` nor `Abc`
 
+## Simple Testing
+```bash
+$ cat << EOF > test-req
+{
+action:STOP
+secret:super_secret
+}
+EOF
+
+$ cat test-req | nc localhost 7021
+```
+
 ## Further reading
 Entire code is meaningfully described and documented for some in deep lurking. `test/` dir contains some more request. Some of them are valid and other not.
 Invalid reqs are mostly marked as so.
