@@ -1,0 +1,3 @@
+/home/piotr/Documents/c/computer-networks/project-rewrite/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/piotr/Documents/c/computer-networks/project-rewrite/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/piotr/Documents/c/computer-networks/project-rewrite/cmake-build-debug/CMakeFiles/project_rewrite.dir
